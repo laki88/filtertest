@@ -2,8 +2,8 @@ package org.laki.filtertest.dto;
 
 public class User {
 
-    private String userName;
     private int id;
+    private String userName;
     private String password;
 
     public String getPassword() {

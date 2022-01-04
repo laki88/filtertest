@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    UserDetailsService userDetailsService;
+    private UserDetailsService userDetailsService;
 
     @GetMapping(path = "/{userName}", produces = "application/json")
     public User getUser(@PathVariable String userName) {
