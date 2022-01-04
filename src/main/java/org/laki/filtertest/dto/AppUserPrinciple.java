@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public class AppUserPrinciple implements UserDetails {
 
-    private User user;
+    private final User user;
 
     public AppUserPrinciple(User user) {
         this.user = user;
@@ -25,7 +25,7 @@ public class AppUserPrinciple implements UserDetails {
 
     @Override
     public String getUsername() {
-        return getUsername();
+        return user.getUserName();
     }
 
     @Override
