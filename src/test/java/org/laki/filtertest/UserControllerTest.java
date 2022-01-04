@@ -13,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -32,7 +31,7 @@ public class UserControllerTest {
         ResponseEntity<String> responseEntity = this.restTemplate.withBasicAuth("lakshman", "123")
                 .exchange("http://localhost:" + port + "/users/admin", HttpMethod.GET, new HttpEntity<Object>(headers), String.class);
         assertThat(responseEntity.getBody().contains("lakshman"));
-        Assertions.assertEquals(HttpStatus.OK,responseEntity.getStatusCode());
+        Assertions.assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
     }
 
     @Test

@@ -26,8 +26,8 @@ public class UserFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         String userNameHeader = req.getHeader("user-name");
-        logger.info("User name header sent by client : "+userNameHeader);
-        User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        logger.info("User name header sent by client : " + userNameHeader);
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         logger.info("Loaded user name of user profile : " + user.getUsername());
         if (userNameHeader.equals(user.getUsername())) {
             filterChain.doFilter(servletRequest, servletResponse);

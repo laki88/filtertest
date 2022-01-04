@@ -1,6 +1,5 @@
 package org.laki.filtertest.controllers;
 
-import org.laki.filtertest.dto.AppUserPrinciple;
 import org.laki.filtertest.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,7 +16,7 @@ public class UserController {
     @Autowired
     UserDetailsService userDetailsService;
 
-    @GetMapping(path="/{userName}", produces = "application/json")
+    @GetMapping(path = "/{userName}", produces = "application/json")
     public User getUser(@PathVariable String userName) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(userName);
         return new User().setUserName(userDetails.getUsername());
